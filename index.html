@@ -2,20 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Chatbot AM1</title>
+  <title>Chatbot AM1 – Ejercicios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2>Chatbot AM1</h2>
+  <div class="container">
+    <h1>Chatbot AM1</h1>
+    <p>Buscá ejercicios por tema o palabra clave</p>
 
-  <div id="chat">
-    <div class="bot">Hola, soy el asistente de Análisis Matemático I.</div>
+    <input
+      type="text"
+      id="pregunta"
+      placeholder="Ej:Funciones lineales, cuadráticas, etc"
+    >
+
+    <button onclick="responder()">Buscar</button>
+
+    <pre id="respuesta"></pre>
   </div>
-
-  <input type="text" id="input" placeholder="Escribí derivadas, límites o continuidad">
-  <button onclick="send()">Enviar</button>
 
   <script src="app.js"></script>
 </body>
 </html>
+
