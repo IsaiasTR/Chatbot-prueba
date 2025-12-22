@@ -1,100 +1,83 @@
-// app.js
+let ejercicios = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  cargarEjercicios();
+  fetch("ejercicios.json")
+    .then(res => res.json())
+    .then(data => {
+      ejercicios = data;
+      renderizarEjercicios(data); // muestra todo al inicio
+    });
 });
 
-async function cargarEjercicios() {
-  try {
-    const response = await fetch("ejercicios.json");
-    const data = await response.json();
-    renderizarEjercicios(data);
-  } catch (error) {
-    console.error("Error cargando el archivo JSON:", error);
-  }
+function buscar() {
+  const texto = document.getElementById("inputPregunta").value.toLowerCase();
+  const resultados = [];
+
+  ejercicios.forEach(bloque => {
+    const nuevosEnunciados = bloque.enunciados.filter(ej => {
+      return (
+        (ej.texto && ej.texto.toLowerCase().includes(texto)) ||
+        (ej.items && ej.items.join(" ").toLowerCase().includes(texto)) ||
+        (ej.funciones && ej.funciones.join(" ").toLowerCase().includes(texto))
+      );
+    });
+
+    if (nuevosEnunciados.length > 0) {
+      resultados.push({
+        ...bloque,
+        enunciados: nuevosEnunciados
+      });
+    }
+  });
+
+  renderizarEjercicios(resultados);
 }
 
 function renderizarEjercicios(data) {
   const container = document.getElementById("chat-container");
   container.innerHTML = "";
 
+  if (data.length === 0) {
+    container.innerHTML = "<p>No se encontraron ejercicios.</p>";
+    return;
+  }
+
   data.forEach(bloque => {
-    // Título por página
     const titulo = document.createElement("h2");
-    titulo.textContent = `${bloque.titulo} (pág. ${bloque.pagina})`;
     titulo.className = "titulo-seccion";
+    titulo.textContent = `${bloque.titulo} (pág. ${bloque.pagina})`;
     container.appendChild(titulo);
 
     bloque.enunciados.forEach(ej => {
       const card = document.createElement("div");
       card.className = "ejercicio-card";
 
-      // Número
       if (ej.numero) {
-        const numero = document.createElement("h3");
-        numero.textContent = `Ejercicio ${ej.numero}`;
-        card.appendChild(numero);
+        const h3 = document.createElement("h3");
+        h3.textContent = `Ejercicio ${ej.numero}`;
+        card.appendChild(h3);
       }
 
-      // Texto principal
       if (ej.texto) {
-        const texto = document.createElement("p");
-        texto.textContent = ej.texto;
-        card.appendChild(texto);
+        const p = document.createElement("p");
+        p.textContent = ej.texto;
+        card.appendChild(p);
       }
 
-      // Observación
-      if (ej.observacion) {
-        const obs = document.createElement("p");
-        obs.className = "observacion";
-        obs.textContent = ej.observacion;
-        card.appendChild(obs);
-      }
-
-      // LaTeX suelto
-      if (ej.latex) {
-        const latex = document.createElement("div");
-        latex.innerHTML = ej.latex;
-        card.appendChild(latex);
-      }
-
-      // Items (a, b, c...)
-      if (ej.items) {
-        const ul = document.createElement("ul");
-        ej.items.forEach(item => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          ul.appendChild(li);
-        });
-        card.appendChild(ul);
-      }
-
-      // Funciones
       if (ej.funciones) {
         ej.funciones.forEach(f => {
-          const fx = document.createElement("div");
-          fx.className = "latex-line";
-          fx.innerHTML = f;
-          card.appendChild(fx);
+          const d = document.createElement("div");
+          d.className = "latex-line";
+          d.innerHTML = f;
+          card.appendChild(d);
         });
       }
 
-      // Sistemas
-      if (ej.sistemas) {
-        ej.sistemas.forEach(sis => {
-          const sistema = document.createElement("div");
-          sistema.className = "latex-line";
-          sistema.innerHTML = sis;
-          card.appendChild(sistema);
-        });
-      }
-
-      // Subitems
-      if (ej.subitems) {
+      if (ej.items) {
         const ul = document.createElement("ul");
-        ej.subitems.forEach(sub => {
+        ej.items.forEach(it => {
           const li = document.createElement("li");
-          li.textContent = sub;
+          li.textContent = it;
           ul.appendChild(li);
         });
         card.appendChild(ul);
@@ -104,9 +87,5 @@ function renderizarEjercicios(data) {
     });
   });
 
-  // Re-render MathJax
-  if (window.MathJax) {
-    MathJax.typesetPromise();
-  }
+  if (window.MathJax) MathJax.typesetPromise();
 }
-
