@@ -2,30 +2,49 @@ let ejercicios = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("ejercicios.json")
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
       ejercicios = data;
-      renderizarEjercicios(data); // muestra todo al inicio
+      mostrarMensajeInicial();
+    })
+    .catch(error => {
+      console.error("Error cargando ejercicios:", error);
     });
 });
 
+function mostrarMensajeInicial() {
+  const container = document.getElementById("chat-container");
+  container.innerHTML = `
+    <div class="mensaje-inicial">
+      Escribí un tema o palabra clave para buscar ejercicios.
+      <br>
+      <span>Ejemplos: límite, función, continuidad</span>
+    </div>
+  `;
+}
+
 function buscar() {
-  const texto = document.getElementById("inputPregunta").value.toLowerCase();
+  const texto = document
+    .getElementById("inputPregunta")
+    .value
+    .toLowerCase()
+    .trim();
+
+  if (!texto) return;
+
   const resultados = [];
 
   ejercicios.forEach(bloque => {
-    const nuevosEnunciados = bloque.enunciados.filter(ej => {
-      return (
-        (ej.texto && ej.texto.toLowerCase().includes(texto)) ||
-        (ej.items && ej.items.join(" ").toLowerCase().includes(texto)) ||
-        (ej.funciones && ej.funciones.join(" ").toLowerCase().includes(texto))
-      );
-    });
+    const enunciadosFiltrados = bloque.enunciados.filter(ej =>
+      (ej.texto && ej.texto.toLowerCase().includes(texto)) ||
+      (ej.items && ej.items.join(" ").toLowerCase().includes(texto)) ||
+      (ej.funciones && ej.funciones.join(" ").toLowerCase().includes(texto))
+    );
 
-    if (nuevosEnunciados.length > 0) {
+    if (enunciadosFiltrados.length > 0) {
       resultados.push({
         ...bloque,
-        enunciados: nuevosEnunciados
+        enunciados: enunciadosFiltrados
       });
     }
   });
@@ -38,7 +57,11 @@ function renderizarEjercicios(data) {
   container.innerHTML = "";
 
   if (data.length === 0) {
-    container.innerHTML = "<p>No se encontraron ejercicios.</p>";
+    container.innerHTML = `
+      <div class="mensaje-inicial">
+        No se encontraron ejercicios para esa búsqueda.
+      </div>
+    `;
     return;
   }
 
@@ -66,18 +89,18 @@ function renderizarEjercicios(data) {
 
       if (ej.funciones) {
         ej.funciones.forEach(f => {
-          const d = document.createElement("div");
-          d.className = "latex-line";
-          d.innerHTML = f;
-          card.appendChild(d);
+          const div = document.createElement("div");
+          div.className = "latex-line";
+          div.innerHTML = f;
+          card.appendChild(div);
         });
       }
 
       if (ej.items) {
         const ul = document.createElement("ul");
-        ej.items.forEach(it => {
+        ej.items.forEach(item => {
           const li = document.createElement("li");
-          li.textContent = it;
+          li.textContent = item;
           ul.appendChild(li);
         });
         card.appendChild(ul);
@@ -87,5 +110,8 @@ function renderizarEjercicios(data) {
     });
   });
 
-  if (window.MathJax) MathJax.typesetPromise();
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
 }
+
