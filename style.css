@@ -1,89 +1,67 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #222;
-}
-
-/* Header */
-header {
-  background-color: #1f2937;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 26px;
-}
-
-header p {
-  margin: 5px 0 0;
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-/* Main */
-main {
+.chat-wrapper {
   max-width: 900px;
   margin: 30px auto;
-  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  background: #f3f4f6;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* Secciones */
-.titulo-seccion {
-  margin-top: 40px;
-  margin-bottom: 15px;
-  font-size: 20px;
-  border-bottom: 2px solid #d1d5db;
-  padding-bottom: 5px;
+.chat-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-/* Cards */
-.ejercicio-card {
-  background: white;
-  border-radius: 8px;
-  padding: 18px 22px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.ejercicio-card h3 {
-  margin-top: 0;
-  color: #1f2937;
-}
-
-/* Texto */
-.ejercicio-card p {
+/* Mensajes */
+.mensaje {
+  max-width: 75%;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  border-radius: 12px;
   line-height: 1.5;
-  margin: 10px 0;
+  font-size: 15px;
 }
 
-.observacion {
-  font-style: italic;
-  color: #555;
+.usuario {
+  background: #2563eb;
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
 }
 
-/* Listas */
-.ejercicio-card ul {
-  margin-left: 20px;
+.bot {
+  background: white;
+  color: #111;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
-.ejercicio-card li {
-  margin: 6px 0;
+/* Input */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
 }
 
-/* LaTeX */
-.latex-line {
-  margin: 12px 0;
-  font-size: 1.05em;
-}
-
-/* Footer */
-footer {
-  text-align: center;
+.chat-input input {
+  flex: 1;
   padding: 15px;
-  font-size: 12px;
-  color: #666;
+  border: none;
+  font-size: 16px;
+}
+
+.chat-input button {
+  padding: 0 22px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chat-input input:focus {
+  outline: none;
 }
