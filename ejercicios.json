@@ -3,35 +3,44 @@
     "archivo": "Guia 1.pdf",
     "pagina": 2,
     "titulo": "Funciones lineales",
-    "enunciados": [
+    "ejercicios": [
       {
         "numero": 1,
-        "texto": "Graficar las siguientes funciones lineales:",
+        "enunciado": "Graficar las siguientes funciones lineales",
         "funciones": [
-          "$$f(x) = x$$",
-          "$$f(x) = 3x$$",
-          "$$f(x) = 3x - 1$$",
-          "$$f(x) = 3(x - 1)$$",
-          "$$f(x) = -3x$$",
-          "$$f(x) = 3$$"
+          "f(x) = x",
+          "f(x) = 3x",
+          "f(x) = 3x - 1",
+          "f(x) = 3(x - 1)",
+          "f(x) = -3x",
+          "f(x) = 3"
         ],
         "resolucion": [
-          "Identificamos la pendiente $$m$$ y la ordenada al origen $$b$$.",
-          "Si $$m>0$$ la recta es creciente.",
-          "Si $$m<0$$ la recta es decreciente.",
-          "Si $$b=0$$ pasa por el origen."
+          "Identificar la pendiente m y la ordenada al origen b en cada función.",
+          "Si m > 0 la recta es creciente.",
+          "Si m < 0 la recta es decreciente.",
+          "Si b = 0 la recta pasa por el origen.",
+          "Graficar cada recta utilizando dos puntos o pendiente e intersección."
         ]
       },
       {
         "numero": 2,
-        "subitems": [
+        "enunciado": "Analizar la función",
+        "consignas": [
           "Indicar dominio e imagen",
           "Indicar las intersecciones con los ejes coordenados",
           "Indicar los conjuntos de ceros, positividad y negatividad"
         ],
-        "latex": "$$C_0,\\; C_+,\\; C_-$$"
+        "notacion": "C₀, C₊, C₋",
+        "resolucion": [
+          "El dominio de una función lineal es ℝ.",
+          "La imagen es ℝ salvo que la función sea constante.",
+          "Las intersecciones se obtienen evaluando f(0) y resolviendo f(x)=0.",
+          "C₀ es el conjunto de ceros, C₊ donde f(x)>0 y C₋ donde f(x)<0."
+        ]
       }
     ]
   }
 ]
+
 
