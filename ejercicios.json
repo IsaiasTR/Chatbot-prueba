@@ -7,7 +7,7 @@
       {
         "numero": 1,
         "enunciado": "Graficar las siguientes funciones lineales",
-        "funciones": [
+        "expresiones": [
           "f(x) = x",
           "f(x) = 3x",
           "f(x) = 3x - 1",
@@ -16,11 +16,10 @@
           "f(x) = 3"
         ],
         "resolucion": [
-          "Identificar la pendiente m y la ordenada al origen b en cada función.",
-          "Si m > 0 la recta es creciente.",
-          "Si m < 0 la recta es decreciente.",
-          "Si b = 0 la recta pasa por el origen.",
-          "Graficar cada recta utilizando dos puntos o pendiente e intersección."
+          "Identificamos la pendiente $$m$$ y la ordenada al origen $$b$$.",
+          "Si $$m > 0$$ la recta es creciente.",
+          "Si $$m < 0$$ la recta es decreciente.",
+          "Si $$b = 0$$ pasa por el origen."
         ]
       },
       {
@@ -29,18 +28,35 @@
         "consignas": [
           "Indicar dominio e imagen",
           "Indicar las intersecciones con los ejes coordenados",
-          "Indicar los conjuntos de ceros, positividad y negatividad"
+          "Indicar los conjuntos $$C_0, C_+, C_-$$"
         ],
-        "notacion": "C₀, C₊, C₋",
         "resolucion": [
-          "El dominio de una función lineal es ℝ.",
-          "La imagen es ℝ salvo que la función sea constante.",
-          "Las intersecciones se obtienen evaluando f(0) y resolviendo f(x)=0.",
-          "C₀ es el conjunto de ceros, C₊ donde f(x)>0 y C₋ donde f(x)<0."
+          "El dominio de una función lineal es $$\\mathbb{R}$$.",
+          "La imagen es $$\\mathbb{R}$$ salvo que la función sea constante.",
+          "Las intersecciones se obtienen resolviendo $$f(x)=0$$ y evaluando $$f(0)$$."
+        ]
+      }
+    ]
+  },
+  {
+    "archivo": "Guia 1.pdf",
+    "pagina": 5,
+    "titulo": "Integrales",
+    "ejercicios": [
+      {
+        "numero": 3,
+        "enunciado": "Calcular las siguientes integrales indefinidas",
+        "expresiones": [
+          "\\int x^2 \\, dx",
+          "\\int (3x - 1) \\, dx",
+          "\\int e^x \\, dx"
+        ],
+        "resolucion": [
+          "Aplicamos la regla de la potencia.",
+          "$$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$$",
+          "Se agrega la constante de integración $$+C$$."
         ]
       }
     ]
   }
 ]
-
-
