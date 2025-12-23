@@ -5,7 +5,7 @@
     "titulo": "Práctica 1 – Funciones",
     "enunciados": [
       {
-        "numero": 1,
+        "numero": 0,
         "texto": "Indicar cuáles de los gráficos dados a continuación representan una función.",
         "latex": "$$f : \\mathbb{R} \\to \\mathbb{R}$$",
         "observacion": "En caso afirmativo, indicar el conjunto imagen.",
@@ -19,17 +19,24 @@
     "titulo": "Funciones lineales",
     "enunciados": [
       {
-        "numero": 2,
+        "numero": 1,
         "texto": "Graficar las siguientes funciones lineales:",
         "funciones": [
-          "$$y = x$$",
-          "$$y = 3x$$",
-          "$$y = 3x - 1$$",
-          "$$y = 3(x - 1)$$",
-          "$$y = -3x$$",
-          "$$y = 3$$"
+          "$$f(x) = x$$",
+          "$$f(x) = 3x$$",
+          "$$f(x) = 3x - 1$$",
+          "$$f(x) = 3(x - 1)$$",
+          "$$f(x) = -3x$$",
+          "$$f(x) = 3$$"
         ]
       },
+      "resolucion": [
+        "Identificamos la pendiente $$m$$ y la ordenada al origen $$b$$.",
+        "Si $$m>0$$ la recta es creciente.",
+        "Si $$m<0$$ la recta es decreciente.",
+        "Si $$b=0$$ pasa por el origen."
+       ]
+      ,
       {
         "numero": 2,
         "subitems": [
