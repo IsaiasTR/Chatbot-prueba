@@ -2,24 +2,19 @@
   {
     "archivo": "Guia 1.pdf",
     "pagina": 2,
-    "titulo": "Funciones lineales",
+    "titulo": "Inecuaciones Racionales",
     "ejercicios": [
       {
         "numero": 1,
-        "enunciado": "Graficar las siguientes funciones lineales",
+        "enunciado": "Escribir como intervalo o unión de intervalos y hallar si existe supremo e ínfimo",
         "expresiones": [
-          "f(x) = x",
-          "f(x) = 3x",
-          "f(x) = 3x - 1",
-          "f(x) = 3(x - 1)",
-          "f(x) = -3x",
-          "f(x) = 3"
+          "$$\frac{x-5}{x+1}<0$$",
+          "$$\frac{x}{5(x+3)}-\frac{1}{7}<\frac{1}{x+3}$$"
         ],
         "resolucion": [
-          "Identificamos la pendiente $$m$$ y la ordenada al origen $$b$$.",
-          "Si $$m > 0$$ la recta es creciente.",
-          "Si $$m < 0$$ la recta es decreciente.",
-          "Si $$b = 0$$ pasa por el origen."
+          "Dado que el segundo miembro es cero, podemos aplicar directamente la formula.",
+          "$$\frac{a}{b}<0$$",
+          "$$(a<0 \cap b>0) \cup (a>0 \cap b<0)$$"
         ]
       },
       {
