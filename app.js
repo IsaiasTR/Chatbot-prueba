@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       ejercicios = data;
       mensajeBot(
-        "Hola 👋 Soy el asistente virtual de <strong>Análisis Matemático 1</strong>.<br>" +
+        "Hola 👋 Soy Isaias-Bot el asistente virtual de <strong>Análisis Matemático 1</strong>.<br>" +
         "Cátedra: <strong>Vázquez Magnani</strong>.<br><br>" +
         "Podés buscar por tema (ej: <em>funciones lineales</em>, <em>integrales</em>)<br>" +
         "o pedir la <em>resolución del ejercicio 1</em>."
