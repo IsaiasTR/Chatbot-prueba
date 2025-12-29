@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     archivos.map(a => fetch(a).then(r => r.json()))
   )
     .then(data => {
-      // Unificamos todos los JSON en un solo array
       ejercicios = data.flat();
 
       mensajeBot(
@@ -95,13 +94,12 @@ function buscar() {
         respuesta += `<strong>Ejercicio ${ej.numero}</strong><br>`;
         respuesta += `<em>${ej.enunciado}</em><br><br>`;
 
-        /* EXPRESIONES */
+        /* EXPRESIONES (SIN TEXTO "Expresión") */
         if (ej.expresiones) {
-          respuesta += "<strong>Expresión:</strong><ul>";
           ej.expresiones.forEach(e => {
-            respuesta += `<li>$$${e}$$</li>`;
+            respuesta += `$$${e}$$`;
           });
-          respuesta += "</ul>";
+          respuesta += "<br>";
         }
 
         /* RESOLUCIÓN */
@@ -122,17 +120,15 @@ function buscar() {
       ) {
         respuesta += `<strong>${bloque.titulo}</strong> (pág. ${bloque.pagina})<br>`;
         respuesta += `<strong>Ejercicio ${ej.numero}</strong><br>`;
-        respuesta += `${ej.enunciado}<br>`;
+        respuesta += `${ej.enunciado}<br><br>`;
 
         if (ej.expresiones) {
-          respuesta += "<ul>";
           ej.expresiones.forEach(e => {
-            respuesta += `<li>$$${e}$$</li>`;
+            respuesta += `$$${e}$$`;
           });
-          respuesta += "</ul>";
+          respuesta += "<br>";
         }
 
-        respuesta += "<br>";
         encontrados++;
       }
     });
@@ -150,4 +146,3 @@ function buscar() {
     mensajeBot(respuesta);
   }
 }
-
