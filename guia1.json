@@ -279,7 +279,7 @@
       {
         "numero": 16,
         "enunciado": "Si f(x) es la función lineal cuyo gráfico pasa por los puntos (1;0) y (0;-3), escribir el conjunto $$\\{ x \\in \\mathbb{R} \\hspace{0.2cm} / \\hspace{0.2cm} \\frac{f(x)}{x}<1\\}$$ como intervalo o unión de intervalos",
-        "expresiones": ["\\frac{6x}{4x-7}\\geq 2"],
+        "expresiones": [],
         "resolucion": [
           "Determinamos la función f(x) a partir de los puntos dados.",
           "La pendiente es:",
