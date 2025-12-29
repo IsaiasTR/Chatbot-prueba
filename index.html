@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Chatbot AM1</title>
+  <meta charset="UTF-8">
+  <title>CHATBOT AM1 – Ejercicios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 
   <!-- MathJax -->
   <script>
     window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      },
       svg: { fontCache: 'global' }
     };
   </script>
@@ -17,25 +21,34 @@
 </head>
 
 <body>
-  <div id="chat-container">
-    <div id="chat-header">
-      Chatbot Análisis Matemático I
-    </div>
+  <header>
+    <h1>CHATBOT - ANÁLISIS MATEMÁTICO 1</h1>
+    <h2>CÁTEDRA: VÁZQUEZ MAGNANI</h2>
+    <p>Acá podés consultar los ejercicios de las guías</p>
+  </header>
 
-    <div id="chat-messages"></div>
+  <main class="chat-wrapper">
+    <div id="chat-container" class="chat-container"></div>
 
-    <div id="chat-input">
+    <div class="chat-input">
       <input
+        id="inputPregunta"
         type="text"
-        id="user-input"
-        placeholder="Ej: resolución guía 1 ejercicio 2"
-      />
-      <button id="send-btn">Enviar</button>
+        placeholder="Ej: resolución ejercicio 6"
+        onkeydown="if(event.key==='Enter') buscar()"
+      >
+      <button onclick="buscar()">Enviar</button>
     </div>
-  </div>
+  </main>
+
+  <footer>
+    <p>ANÁLISIS MATEMÁTICO 1 - CBC - FCE - UBA</p>
+    <p>
+      Desarrollado por <strong>ISAIAS TENORIO</strong> |
+      <a href="https://github.com/IsaiasTR" target="_blank">Mi GitHub</a>
+    </p>
+  </footer>
 
   <script src="app.js"></script>
 </body>
 </html>
-
-
