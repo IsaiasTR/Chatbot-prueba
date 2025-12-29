@@ -69,7 +69,6 @@ function buscar() {
   input.value = "";
 
   let respuesta = "";
-  let encontrados = 0;
 
   const pedirResolucion =
     texto.includes("resolucion") || texto.includes("resolución");
@@ -77,7 +76,44 @@ function buscar() {
   const numeroMatch = texto.match(/\d+/);
   const numeroEjercicio = numeroMatch ? parseInt(numeroMatch[0]) : null;
 
+  const guiaMatch = texto.match(/guia\s*(\d+)/);
+  const numeroGuia = guiaMatch ? guiaMatch[1] : null;
+
+  /* ===== CONTAR COINCIDENCIAS ===== */
+  let coincidencias = 0;
+
   ejercicios.forEach(bloque => {
+    bloque.ejercicios.forEach(ej => {
+      if (
+        pedirResolucion &&
+        numeroEjercicio === ej.numero &&
+        ej.resolucion
+      ) {
+        coincidencias++;
+      }
+    });
+  });
+
+  /* ===== SI HAY AMBIGÜEDAD ===== */
+  if (pedirResolucion && !numeroGuia && coincidencias > 1) {
+    mensajeBot(
+      "Ese ejercicio aparece en más de una guía.<br><br>" +
+      "Por favor, especificá el número de guía.<br>" +
+      "Ejemplo: <em>resolución ejercicio 2 guía 1</em>"
+    );
+    return;
+  }
+
+  /* ===== BÚSQUEDA NORMAL ===== */
+  ejercicios.forEach(bloque => {
+
+    if (
+      numeroGuia &&
+      !bloque.archivo.toLowerCase().includes(`guia ${numeroGuia}`)
+    ) {
+      return;
+    }
+
     bloque.ejercicios.forEach(ej => {
 
       const contenido =
@@ -85,7 +121,6 @@ function buscar() {
         ej.enunciado + " " +
         (ej.expresiones ? ej.expresiones.join(" ") : "");
 
-      /* ========= RESOLUCIÓN ========= */
       if (
         pedirResolucion &&
         numeroEjercicio === ej.numero &&
@@ -95,7 +130,6 @@ function buscar() {
         respuesta += `<strong>Ejercicio ${ej.numero}</strong><br>`;
         respuesta += `<em>${ej.enunciado}</em><br><br>`;
 
-        /* EXPRESIONES (SIN TEXTO "Expresión") */
         if (ej.expresiones) {
           ej.expresiones.forEach(e => {
             respuesta += `$$${e}$$`;
@@ -103,21 +137,16 @@ function buscar() {
           respuesta += "<br>";
         }
 
-        /* RESOLUCIÓN */
         respuesta += "<strong>Resolución:</strong><ul>";
         ej.resolucion.forEach(r => {
           respuesta += `<li>${r}</li>`;
         });
         respuesta += "</ul><br>";
-
-        encontrados++;
       }
 
-      /* ========= BÚSQUEDA POR TEMA ========= */
       if (
         !pedirResolucion &&
-        contenido.toLowerCase().includes(texto) &&
-        encontrados < 3
+        contenido.toLowerCase().includes(texto)
       ) {
         respuesta += `<strong>${bloque.titulo}</strong> (pág. ${bloque.pagina})<br>`;
         respuesta += `<strong>Ejercicio ${ej.numero}</strong><br>`;
@@ -129,8 +158,6 @@ function buscar() {
           });
           respuesta += "<br>";
         }
-
-        encontrados++;
       }
     });
   });
@@ -141,7 +168,7 @@ function buscar() {
       "Probá con:<br>" +
       "• inecuaciones racionales<br>" +
       "• funciones<br>" +
-      "• resolución ejercicio 4"
+      "• resolución ejercicio 4 guía 1"
     );
   } else {
     mensajeBot(respuesta);
