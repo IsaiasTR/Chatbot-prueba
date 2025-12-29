@@ -8,7 +8,7 @@
         "numero": 2,
         "enunciado": "Calcular:",
         "expresiones": [
-          "\\lim_{x \\to 3} \\frac{2-\\sqrt{7-x}{2x^2-4x-6}"
+          "\\lim_{x \\to 3} \\frac{2-\\sqrt{7-x}}{2x^2-4x-6}"
         ],
         "resolucion": [
           "Aplicamos el límite notable.",
