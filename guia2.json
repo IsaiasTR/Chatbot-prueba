@@ -67,16 +67,16 @@
         "numero": 6,
         "enunciado": "Calcular:",
         "expresiones": [
-         "\\lim_{x \\to 0} (5x+1)^{\\frac{2}{x}}"
+         "\\lim_{x \\to 0} (5x+1)^{\\displaystyle \\frac{2}{x}}"
         ],
         "resolucion": [
            "Reescribimos la expresión en función del límite notable.",
-           "$$(5x+1)^{\\frac{2}{x}} = \\left[(1+5x)^{\\frac{1}{5x}}\\right]^{10}$$",
+           "$$(5x+1)^{\\displaystyle \\frac{2}{x}} = \\left[(1+5x)^{\\displaystyle \\frac{1}{5x}}\\right]^{10}$$",
            "Aplicamos el límite notable.",
-           "$$\\lim_{u \\to 0} (1+u)^{\\frac{1}{u}} = e$$",
+           "$$\\lim_{u \\to 0} (1+u)^{\\displaystyle \\frac{1}{u}} = e$$",
            "Concluimos que el límite vale:",
            "$$e^{10}$$"
-       ]
+        ]
       }
     ]
   }
