@@ -73,10 +73,34 @@
            "Reescribimos la expresión en función del límite notable.",
            "$$(5x+1)^{\\displaystyle \\frac{2}{x}} = \\left[(1+5x)^{\\displaystyle \\frac{1}{5x}}\\right]^{10}$$",
            "Aplicamos el límite notable.",
-           "$$\\lim_{u \\to 0} (1+u)^{\\displaystyle \\frac{1}{u}} = e$$",
+           "$$\\lim_{f(x) \\to 0} (1+f(x))^{\\displaystyle \\frac{1}{f(x)}} = e$$",
            "Concluimos que el límite vale:",
            "$$e^{10}$$"
         ]
+      },
+      {
+        "numero": 8,
+        "enunciado": "Hallar las asíntotas verticales de la función",
+        "expresiones": [
+         "f(x)=\\frac{\\sqrt{2x^2+7}-5}{(x-3)(x-4)}"
+        ],
+        "resolucion": [
+          "Las posibles asíntotas verticales se obtienen igualando el denominador a cero.",
+          "$$(x-3)(x-4)=0 \\Rightarrow x=3 \\; \\text{y} \\; x=4$$",
+          "Analizamos el comportamiento de la función en x=3.",
+          "Evaluamos el numerador en x=3.",
+          "$$\\sqrt{2(3)^2+7}-5 = \\sqrt{25}-5 = 0$$",
+          "Como numerador y denominador se anulan en x=3, estudiamos el límite.",
+          "$$\\lim_{x \\to 3} \\frac{\\sqrt{2x^2+7}-5}{(x-3)(x-4)}$$",
+          "Racionalizamos el numerador.",
+          "$$\\lim_{x \\to 3} \\frac{2(x+3)}{(x-4)(\\sqrt{2x^2+7}+5)}$$",
+          "El límite existe y es finito, por lo tanto x=3 no es una asíntota vertical.",
+          "Analizamos ahora el comportamiento de la función en x=4.",
+          "Evaluamos el numerador en x=4.",
+          "$$\\sqrt{2(4)^2+7}-5 = \\sqrt{39}-5 \\neq 0$$",
+          "El denominador se anula y el numerador no, por lo tanto el límite es infinito.",
+          "Concluimos que x=4 es una asíntota vertical."
+       ]
       }
     ]
   }
