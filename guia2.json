@@ -124,6 +124,32 @@
           "$$\\lim_{x \\to 0} (1+2x^2)^{\\displaystyle \\frac{1}{3x^4}} = +\\infty$$",
           "Concluimos que la función tiene una asíntota vertical en x = 0."
        ]
+      },
+      {
+        "numero": 12,
+        "enunciado": "Hallar las asíntotas verticales y horizontales de la función",
+        "expresiones": [
+         "f(x)=\\frac{3x-15}{x^2-25}+2"
+        ],
+        "resolucion": [
+          "Comenzamos analizando las asíntotas verticales igualando el denominador a cero.",
+          "$$x^2-25=0 \\Rightarrow x=5 \\; \\text{y} \\; x=-5$$",
+          "Factorizamos numerador y denominador.",
+          "$$\\frac{3(x-5)}{(x-5)(x+5)} + 2$$",
+          "Simplificamos el factor común (x-5).",
+          "$$\\frac{3}{x+5} + 2$$",
+          "Analizamos el comportamiento de la función en x=5.",
+          "El factor (x-5) se cancela, por lo tanto x=5 no es una asíntota vertical.",
+          "Analizamos el comportamiento de la función en x=-5.",
+          "El denominador se anula y el numerador no, por lo tanto el límite es infinito.",
+          "Concluimos que x=-5 es una asíntota vertical.",
+          "Ahora analizamos las asíntotas horizontales.",
+          "Calculamos el límite cuando x tiende a +\\infty.",
+          "$$\\lim_{x \\to +\\infty} \\left( \\frac{3}{x+5} + 2 \\right) = 2$$",
+          "Calculamos el límite cuando x tiende a -\\infty.",
+          "$$\\lim_{x \\to -\\infty} \\left( \\frac{3}{x+5} + 2 \\right) = 2$$",
+          "Concluimos que la función tiene una asíntota horizontal y=2."
+         ]
       }
     ]
   }
