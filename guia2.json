@@ -150,6 +150,34 @@
           "$$\\lim_{x \\to -\\infty} \\left( \\frac{3}{x+5} + 2 \\right) = 2$$",
           "Concluimos que la función tiene una asíntota horizontal y=2."
          ]
+      },
+      {
+        "numero": 14,
+        "enunciado": "Hallar a \\in \\mathbb{R} tal que:",
+        "expresiones": [
+           "\\lim_{x \\to +\\infty} \\left(\\frac{x+a}{x+4}\\right)^{\\displaystyle 5x}=e^{10}"
+        ],
+        "resolucion": [
+           "Partimos del límite dado.",
+           "$$\\lim_{x \\to +\\infty} \\left(\\frac{x+a}{x+4}\\right)^{\\displaystyle 5x} = e^{10}$$",
+           "Reescribimos la base dividiendo numerador y denominador por x.",
+           "$$\\left(\\frac{1+\\frac{a}{x}}{1+\\frac{4}{x}}\\right)^{\\displaystyle 5x}$$",
+           "Tomamos logaritmo natural para analizar el límite.",
+           "$$\\ln L = \\lim_{x \\to +\\infty} 5x \\ln\\left(\\frac{1+\\frac{a}{x}}{1+\\frac{4}{x}}\\right)$$",
+           "Usamos la propiedad del logaritmo del cociente.",
+           "$$\\ln L = \\lim_{x \\to +\\infty} 5x \\left[ \\ln\\left(1+\\frac{a}{x}\\right) - \\ln\\left(1+\\frac{4}{x}\\right) \\right]$$",
+           "Aplicamos el desarrollo para \\(\\ln(1+u)\\) cuando u tiende a 0.",
+           "$$\\ln(1+u) \\sim u \\quad \\text{cuando} \\quad u \\to 0$$",
+           "Sustituimos en la expresión.",
+           "$$\\ln L = \\lim_{x \\to +\\infty} 5x \\left( \\frac{a}{x} - \\frac{4}{x} \\right)$$",
+           "Simplificamos.",
+           "$$\\ln L = 5(a-4)$$",
+           "Como el límite vale e^{10}, igualamos exponentes.",
+           "$$5(a-4)=10$$",
+           "Resolvemos la ecuación.",
+           "$$a-4=2 \\Rightarrow a=6$$",
+           "Concluimos que el valor buscado es a=6."
+          ]
       }
     ]
   }
