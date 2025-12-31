@@ -208,6 +208,32 @@
            "$$a = -3$$",
            "Concluimos que el valor buscado es a = -3."
           ]
+       },
+              {
+        "numero": 18,
+        "enunciado": "Dada la función f(x), hallar a sabiendo que f(x) es continua en x=5:",
+        "expresiones": [
+           "f(x)=\\begin{cases} \\frac{4x-20}{\\sqrt{x+20}-5} & \\text{si } x>5 \\\\ ax-5 & \\text{si } x \\le 5 \\end{cases}"
+        ],
+        "resolucion": [
+           "Para que f(x) sea continua en x=5 debe cumplirse que el límite cuando x tiende a 5 por derecha sea igual al valor de la función en x=5.",
+           "Calculamos el límite por derecha:",
+           "$$\\lim_{x\\to 5^+} \\frac{4x-20}{\\sqrt{x+20}-5}$$",
+           "Factorizamos el numerador:",
+           "$$\\frac{4(x-5)}{\\sqrt{x+20}-5}$$",
+           "Racionalizamos multiplicando por el conjugado:",
+           "$$\\frac{4(x-5)(\\sqrt{x+20}+5)}{(x+20)-25}$$",
+           "Simplificamos:",
+           "$$4(\\sqrt{x+20}+5)$$",
+           "Evaluamos el límite en x=5:",
+           "$$4(\\sqrt{25}+5)=4(5+5)=40$$",
+           "Calculamos el valor de la función en x=5 usando el segundo tramo:",
+           "$$f(5)=5a-5$$",
+           "Imponemos la condición de continuidad:",
+           "$$5a-5=40$$",
+           "Resolviendo la ecuación:",
+           "$$5a=45 \\Rightarrow a=9$$"
+          ]
        }
      ]
   }
