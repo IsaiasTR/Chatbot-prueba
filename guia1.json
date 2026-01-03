@@ -311,12 +311,12 @@
           "$$x \\in (0,\\frac{3}{2})$$",
           "No existe mínimo ni máximo.",
           "El ínfimo es $$0$$.",
-          "El supremo es $$\\frac{3}{2}$$."
+          "El supremo es $$\\frac{3}{2}$$"
         ]
       },
       {
         "numero": 18,
-        "enunciado": "Sean A={ x \\in \\mathbb{R} / |x-3|<8 }  y B = { x \\in \\mathbb{R} / |x|<7}. Escribir A \\cup B como intervalo o unión de intervalos y hallar, si existen supremo e ínfimo de A \\cup B",
+        "enunciado": "Sean A=$${ x \\in \\mathbb{R} / |x-3|<8 }$$  y B = $${ x \\in \\mathbb{R} / |x|<7}$$. Escribir $$A \\cup B$$ como intervalo o unión de intervalos y hallar, si existen supremo e ínfimo de A \\cup B",
         "expresiones": [],
         "resolucion": []
       }
