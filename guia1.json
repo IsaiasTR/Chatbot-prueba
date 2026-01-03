@@ -318,8 +318,22 @@
         "numero": 18,
         "enunciado": "Sean A y B. $$A=\\{ x \\in \\mathbb{R} / |x-3|<8 \\} \\hspace{0.5cm} y \\hspace{0.5cm} B = \\{ x \\in \\mathbb{R} / |x|<7\\}$$ Escribir $$A \\cap B$$ como intervalo o unión de intervalos y hallar, si existen supremo e ínfimo de dicha intersección",
         "expresiones": [],
-        "resolucion": []
-      }
-    ]
+        "resolucion": [
+           "Determinamos el conjunto A a partir de la desigualdad con valor absoluto.",
+           "$$|x-3|<8 \\iff -8<x-3<8$$",
+           "$$-5<x<11$$",
+           "Por lo tanto:",
+           "$$A=(-5,11)$$",
+           "Determinamos el conjunto B a partir de la desigualdad con valor absoluto.",
+           "$$|x|<7 \\iff -7<x<7$$",
+           "Por lo tanto:",
+           "$$B=(-7,7)$$",
+           "Calculamos la intersección de los conjuntos A y B.",
+           "$$A \\cap B = (-5,7)$$",
+           "Determinamos el ínfimo y el supremo del conjunto obtenido.",
+           "$$\\inf(A \\cap B) = -5 \\quad , \\quad \\sup(A \\cap B) = 7$$"
+           ]
+        }
+     ]
   }
 ]
