@@ -310,7 +310,7 @@
           "La solución es el intervalo:",
           "$$x \\in (0,\\frac{3}{2})$$",
           "No existe mínimo ni máximo.",
-          "El ínfimo es $$0$$.",
+          "El ínfimo es $$0$$",
           "El supremo es $$\\frac{3}{2}$$"
         ]
       },
@@ -320,7 +320,8 @@
         "expresiones": [],
         "resolucion": [
            "Determinamos el conjunto A a partir de la desigualdad con valor absoluto.",
-           "$$|x-3|<8 \\quad \\textbf{equivale a} \\quad -8<x-3<8$$",
+           "|x-3|<8  si y solo si -8<x-3<8",
+           "Entonces",
            "$$-8<x-3<8$$",
            "$$-8+3<x<8+3$$",
            "$$-5<x<11$$",
@@ -344,7 +345,7 @@
         ],
         "resolucion": [
         ]
-       }
+      }
     ]
   }
 ]
