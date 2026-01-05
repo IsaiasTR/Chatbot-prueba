@@ -341,7 +341,7 @@
         "numero": 20,
         "enunciado": "Escribir el conjunto A como intervalo o unión de intervalos",
         "expresiones": [
-          "A=\\{x \\in \\matbhh{R} / \\sqrt{x^2+3}-2 \\geq 0\\}"
+          "A=\\{x \\in \\mathbb{R} / \\sqrt{x^2+3}-2 \\geq 0\\}"
         ],
         "resolucion": [
         ]
