@@ -468,6 +468,32 @@
             "Por lo tanto:",
             "$$A=(-\\infty,-1) \\cup (0,1)$$"
         ]
+      },
+      {
+        "numero": 30,
+        "enunciado": "Escribir como intervalo o unión de intervalos el conjunto A",
+        "expresiones": [
+          "A=\\{x \\in \\mathbb{R} / ln(6x^2-5x) \\geq 0 \\}"
+        ],
+        "resolucion": [
+             "Partimos de la desigualdad dada.",
+             "$$\\ln(6x^2-5x) \\geq 0$$",
+             "Recordamos que para el logaritmo natural se cumple:",
+             "$$\\ln(t) \\geq 0 \\text{ si y solo si } t \\geq 1$$",
+             "Entonces la desigualdad es equivalente a:",
+             "$$6x^2-5x \\geq 1$$",
+             "Pasamos todos los términos a un solo miembro.",
+             "$$6x^2-5x-1 \\geq 0$$",
+             "Resolvemos la ecuación cuadrática asociada.",
+             "$$6x^2-5x-1 = 0$$",
+             "Calculamos las raíces.",
+             "$$x=1 \\quad \\text{y} \\quad x=-\\frac{1}{6}$$",
+             "Como el coeficiente principal es positivo, la desigualdad se cumple fuera del intervalo entre las raíces.",
+             "Los intervalos solución son:",
+             "$$(-\\infty,-\\frac{1}{6}] \\cup [1,\\infty)$$",
+             "Por lo tanto:",
+             "$$A=(-\\infty,-\\frac{1}{6}] \\cup [1,\\infty)$$"
+        ]
       }
     ]
   }
