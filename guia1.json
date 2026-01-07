@@ -502,7 +502,21 @@
           "f(x)=\\sqrt{\\frac{3x}{4-2x}}+\\frac{1}{x-1}"
         ],
         "resolucion":[
-          
+            "Para que la función esté definida deben cumplirse simultáneamente:",
+            "1) El radicando de la raíz cuadrada debe ser mayor o igual que cero.",
+            "2) Los denominadores no deben anularse.",
+            "Analizamos el radicando:",
+            "$$\\frac{3x}{4-2x} \\geq 0$$",
+            "Ceros y discontinuidades:",
+            "$$3x=0 \\Rightarrow x=0$$",
+            "$$4-2x=0 \\Rightarrow x=2$$",
+            "El cociente es no negativo en el intervalo $[0,2)$.",
+            "Analizamos el término racional:",
+            "$$x-1 \\neq 0 \\Rightarrow x \\neq 1$$",
+            "Combinando restricciones:",
+            "$$0 \\leq x < 2 \\; \\text{y} \\; x \\neq 1$$",
+            "Por lo tanto, el dominio es:",
+            "resultado": "$$[0,1) \\cup (1,2)$$"
         ]
       }
     ]
