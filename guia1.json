@@ -522,13 +522,27 @@
         },
        {
          "numero": 34,
-         "enunciado": "Sea f(x), hallar la inversa de (f(x)^{-1}) y expresar el dominio de la inversa como intervalo o unión de intervalos",
+         "enunciado": "Sea f(x), hallar la inversa de (f^{-1}(x)) y expresar el dominio de la inversa como intervalo o unión de intervalos",
          "expresiones": [
             "f(x)=5-e^{4x+1}"
           ],
          "resolucion": [
-           
-         ]
+            "Sea $y=f(x)=5-e^{4x+1}$.",
+            "Despejamos $x$ en función de $y$:",
+            "$$5-y=e^{4x+1}$$",
+            "Aplicamos logaritmo natural:",
+            "$$\\ln(5-y)=4x+1$$",
+            "Despejamos $x$:",
+            "$$x=\\frac{\\ln(5-y)-1}{4}$$",
+            "Intercambiamos variables para obtener la inversa:",
+            "$$f^{-1}(x)=\\frac{\\ln(5-x)-1}{4}$$",
+            "Para que la inversa esté definida debe cumplirse:",
+            "$$5-x>0$$",
+            "Por lo tanto:",
+            "$$x<5$$",
+            "resultado:",
+            "$$f^{-1}(x)=\\frac{\\ln(5-x)-1}{4}, \\quad D_{f^{-1}}=(-\\infty,5)$$"
+           ]
        }
      ]
   }
