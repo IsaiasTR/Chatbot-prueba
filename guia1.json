@@ -548,7 +548,7 @@
          "numero": 36,
          "enunciado": "Si f(x) es la función lineal tal que f(1)=1 y f(2)=4 , escribir como intervalo o unión de intervalos el conjunto A",
          "expresiones": [
-            "A=\\{ x \\in \\mathbb{R} / \left|f(x)\right| > 7\\}"
+            "A=\\{ x \\in \\mathbb{R} /  |f(x)| > 7\\}"
           ],
          "resolucion": [
               "Como f es lineal y pasa por los puntos $(1,1)$ y $(2,4)$, calculamos su expresión.",
