@@ -590,7 +590,7 @@
       },
       {
          "numero": 40,
-         "enunciado": "Dadas las funciones f(x) y g(x) , calcular g \\circ f y hallar su dominio",
+         "enunciado": "Dadas las funciones f(x) y g(x) , calcular g ∘ f y hallar su dominio",
          "expresiones": [
             "f(x)=\\frac{x+2}{x-3}, \\quad g(x)=\\ln(x)"
           ],
@@ -611,6 +611,33 @@
               "El cociente es positivo en los intervalos $(-\\infty,-2)$ y $(3,\\infty)$.",
               "RESULTADO:",
               "$$g \\circ f(x)=\\ln\\left(\\frac{x+2}{x-3}\\right), \\quad D_{g \\circ f}=(-\\infty,-2) \\cup (3,\\infty)$$"
+        ]
+      },
+      {
+         "numero": 42,
+         "enunciado": "Dadas las funciones f(x) y g(x) , calcular g ∘ f y dar su conjunto de negatividad",
+         "expresiones": [
+            "f(x)=x^2+\\frac{1}{9}, \\quad g(x)=\\ln(x+\\frac{7}{9})"
+          ],
+         "resolucion":[
+               "Calculamos la composición $g \\circ f$:",
+               "$$g(f(x))=g\\left(\\frac{x+2}{x-3}\\right)$$",
+               "Como $g(x)=\\ln(x)$, resulta:",
+               "$$g \\circ f(x)=\\ln\\left(\\frac{x+2}{x-3}\\right)$$",
+               "Para que la composición esté definida:",
+               "$$\\frac{x+2}{x-3}>0$$",
+               "Los puntos críticos son:",
+               "$$x=-2, \\; x=3$$",
+               "El dominio de la composición es:",
+               "$$(-\\infty,-2) \\cup (3,\\infty)$$",
+               "El conjunto de negatividad se obtiene cuando:",
+               "$$\\ln\\left(\\frac{x+2}{x-3}\\right)<0$$",
+               "Esto equivale a:",
+               "$$0<\\frac{x+2}{x-3}<1$$",
+               "Resolviendo la desigualdad se obtiene:",
+               "$$x<-2$$",
+               "RESULTADO:",
+               "$$g \\circ f(x)=\\ln\\left(\\frac{x+2}{x-3}\\right), \\quad \\text{Conjunto de negatividad }=(-\\infty,-2)$$"
         ]
       }
     ]
