@@ -55,21 +55,63 @@ function mensajeBot(html) {
 }
 
 /* ===============================
+   SONIDO SUAVE (SOFT BUBBLE)
+================================ */
+
+let audioCtx = null;
+
+function playTypingSound() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  osc.type = "sine";
+  osc.frequency.value = 520;
+
+  gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(
+    0.001,
+    audioCtx.currentTime + 0.12
+  );
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.12);
+}
+
+/* ===============================
    ANIMACIÓN ESCRIBIENDO
 ================================ */
 
 let escribiendoDiv = null;
+let typingInterval = null;
 
 function mostrarEscribiendo() {
   const chat = document.getElementById("chat-container");
+
   escribiendoDiv = document.createElement("div");
   escribiendoDiv.className = "mensaje bot escribiendo";
-  escribiendoDiv.innerHTML = "<em>Isaias-Bot está escribiendo...</em>";
+  escribiendoDiv.innerHTML = "<strong>Isaias-Bot</strong> está escribiendo<span class='dots'>...</span>";
+
   chat.appendChild(escribiendoDiv);
   chat.scrollTop = chat.scrollHeight;
+
+  // sonido sincronizado (no molesto)
+  playTypingSound();
+  typingInterval = setInterval(playTypingSound, 900);
 }
 
 function ocultarEscribiendo() {
+  if (typingInterval) {
+    clearInterval(typingInterval);
+    typingInterval = null;
+  }
+
   if (escribiendoDiv) {
     escribiendoDiv.remove();
     escribiendoDiv = null;
@@ -105,10 +147,7 @@ function buscar() {
 
   ejercicios.forEach(bloque => {
     bloque.ejercicios.forEach(ej => {
-      if (
-        numeroEjercicio === ej.numero &&
-        ej.resolucion
-      ) {
+      if (numeroEjercicio === ej.numero && ej.resolucion) {
         coincidencias++;
       }
     });
@@ -136,11 +175,8 @@ function buscar() {
     }
 
     bloque.ejercicios.forEach(ej => {
+      if (numeroEjercicio === ej.numero && ej.resolucion) {
 
-      if (
-        numeroEjercicio === ej.numero &&
-        ej.resolucion
-      ) {
         respuesta += `<strong>${bloque.titulo}</strong> (pág. ${bloque.pagina})<br>`;
         respuesta += `<strong>Ejercicio ${ej.numero}:</strong><br>`;
         respuesta += `<strong>${ej.enunciado}</strong><br><br>`;
@@ -175,5 +211,5 @@ function buscar() {
     } else {
       mensajeBot(respuesta);
     }
-  }, 1500); // ⏱️ delay aumentado
+  }, 6000);
 }
